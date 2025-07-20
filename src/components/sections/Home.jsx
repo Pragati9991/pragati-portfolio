@@ -1,7 +1,18 @@
+import { useEffect } from 'react';
 import { RevealOnScroll } from "../RevealOnScroll";
 import { TypingText } from "../TypingText";
 
 export const Home = () => {
+
+  useEffect(() => {
+    // Small delay ensures layout has stabilized before scrolling
+    const timeout = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 50);
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
   return (
     <section 
       id="home" 
