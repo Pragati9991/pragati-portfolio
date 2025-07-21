@@ -18,7 +18,7 @@ export const Projects = () => {
                 Anonymous Reporting & Ticket Management System for Hospitals
               </h3>
               <p className="text-gray-400 mb-4 text-justify">
-                A secure web app that allows hospital staff to submit incident reports anonymously. The system organizes reports as trackable tickets, helping administrators monitor status updates and ensure efficient resolution,  all while preserving confidentiality.
+                A secure web app used by Clínica Sagrada Familia (Barcelona) to help hospital staff to submit incident reports anonymously. The system organizes reports as trackable tickets, helping administrators monitor status updates and ensure efficient resolution,  all while maintaining confidentiality.
               </p>
               <div className="flex flex/wrap gap/2 mb/4">
                 {["React", "Node.js"].map((tech, key) => (
@@ -45,7 +45,7 @@ export const Projects = () => {
                 Interactive Periodic Table & Atomic Model Visualizer
               </h3>
               <p className="text-gray-400 mb-4 text-justify" >
-                A playful take on the periodic table! Mendelemento lets you explore elements with vibrant filters and animated 3D atomic models using Three.js. Click any element to see its electrons zooming around colorful orbits. It’s currently in MVP stage — building the nucleus with these tools was trickier than expected, but improvements are on the way! The goal? A smoother, more polished learning tool that makes chemistry feel magical.
+                Mendelemento is a fun way to explore the periodic table! You can filter elements and see cute 3D atoms with colorful spinning electrons. It’s still in the early MVP stage, the nucleus was tricky to build, but updates are coming! The goal? A smoother, more polished learning tool that makes chemistry feel magical.
               </p>
               <div>
                 {["JavaScript", "Three.js", "HTML/CSS"].map((tech, key) => (
