@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
 import { RevealOnScroll } from "../RevealOnScroll";
+import { TypingText } from "../TypingText";
 
 export const Home = () => {
+
+  useEffect(() => {
+    // Small delay ensures layout has stabilized before scrolling
+    const timeout = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 50);
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
   return (
     <section 
       id="home" 
@@ -8,13 +20,22 @@ export const Home = () => {
     >
       <RevealOnScroll>
         <div className="text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
+          <h1 className="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Hi, I'm Pragati Juyal
           </h1>
 
-          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+          <TypingText
+            text="Full Stack Developer"
+            speed={100}
+            className="text-cyan-400 text-xl font-mono mt-2"
+          />
+
+
+  
+          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto mt-4">
             I enjoy turning ideas into simple, helpful software. Whether I’m working on a small interface or a full-stack feature, I try to build with clarity, empathy, and attention to detail. I'm always learning, always listening, and I believe the best tools feel effortless to use.
           </p>
+
           <div className="flex justify-center space-x-4">
             <a 
               href="#projects" 
@@ -29,8 +50,6 @@ export const Home = () => {
             >
               Contact Me
             </a>
-
-
           </div>
         </div>
       </RevealOnScroll>
