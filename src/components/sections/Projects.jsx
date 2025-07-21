@@ -17,7 +17,7 @@ export const Projects = () => {
               <h3 className="text-xl font-bold mb-2">
                 Anonymous Reporting & Ticket Management System for Hospitals
               </h3>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-400 mb-4 text-justify">
                 A secure web app that allows hospital staff to submit incident reports anonymously. The system organizes reports as trackable tickets, helping administrators monitor status updates and ensure efficient resolution,  all while preserving confidentiality.
               </p>
               <div className="flex flex/wrap gap/2 mb/4">
@@ -42,13 +42,13 @@ export const Projects = () => {
             {/* Periodic Table */}
             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
               <h3 className="text-xl font-bold mb-2">
-                Anonymous Reporting & Ticket Management System for Hospitals
+                Interactive Periodic Table & Atomic Model Visualizer
               </h3>
-              <p className="text-gray-400 mb-4">
-                A secure web app that allows hospital staff to submit incident reports anonymously. The system organizes reports as trackable tickets, helping administrators monitor status updates and ensure efficient resolution — all while preserving confidentiality.
+              <p className="text-gray-400 mb-4 text-justify" >
+                A playful take on the periodic table! Mendelemento lets you explore elements with vibrant filters and animated 3D atomic models using Three.js. Click any element to see its electrons zooming around colorful orbits. It’s currently in MVP stage — building the nucleus with these tools was trickier than expected, but improvements are on the way! The goal? A smoother, more polished learning tool that makes chemistry feel magical.
               </p>
               <div>
-                {["React", "Node.js"].map((tech, key) => (
+                {["JavaScript", "Three.js", "HTML/CSS"].map((tech, key) => (
                   <span 
                     key={key}
                     className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
@@ -59,44 +59,14 @@ export const Projects = () => {
               {/* Link to the project */}
               <div className="flex justify-between items-center mt-4">
                 <a 
-                  href="#" 
+                  href="https://pragati9991.github.io/periodic-table/" 
                   className="text-blue-400 hover:text-blue-300 transition-colors"
                 > View Project → 
                 </a>
 
               </div>
             </div>
-            {/*  */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Anonymous Reporting & Ticket Management System for Hospitals
-              </h3>
-              <p className="text-gray-400 mb-4">
-                A secure web app that allows hospital staff to submit incident reports anonymously. The system organizes reports as trackable tickets, helping administrators monitor status updates and ensure efficient resolution — all while preserving confidentiality.
-              </p>
-              <div>
-                {["React", "Node.js"].map((tech, key) => (
-                  <span 
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {/* Link to the project */}
-              <div className="flex justify-between items-center mt-4">
-                <a 
-                  href="#" 
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
-                > View Project → 
-                </a>
-
-              </div>
-            </div>
-            {/*  */}
-
           </div>
-
         </div>
       </RevealOnScroll>
     </section>

@@ -15,7 +15,8 @@ export const About = () => {
     "Angular",
     "Material UI", 
     "Figma",
-    "p5.js"
+    "p5.js",
+    "Three.js"
   ];
 
   const backendSkills = [
