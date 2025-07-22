@@ -32,7 +32,7 @@ export const Home = () => {
             className="text-cyan-400 text-xl font-mono mt-2"
           />
   
-          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto mt-4">
+          <p className="text-gray-200 text-lg mb-8 max-w-lg mx-auto mt-4">
             I enjoy turning ideas into simple, helpful software. Whether I’m working on a small interface or a full-stack feature, I try to build with clarity, empathy, and attention to detail. I'm always learning, always listening, and I believe the best tools feel effortless to use.
           </p>
 
@@ -53,6 +53,20 @@ export const Home = () => {
           </div>
         </div>
       </RevealOnScroll>
+      <a
+        href="#about"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white transition duration-300 hover:scale-110 hover:text-cyan-400 animate-bounce z-10"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 drop-shadow-md"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>  
     </section>
   );
 };
