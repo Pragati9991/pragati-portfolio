@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }) => {
   return (
     <>
       <div
-        className="cursor-pointer p-4 rounded-xl border border-white/10 hover:shadow-lg hover:-translate-y-1 transition bg-[#0d0d0d] shadow-blue-500/20 shadow-md min-h-[450px] flex flex-col justify-between"
+        className="w-full max-w-sm mx-auto min-h-[450px] cursor-pointer p-4 rounded-xl border border-white/10 bg-[#0d0d0d] shadow-blue-500/30 shadow-md hover:shadow-lg hover:-translate-y-1 transition flex flex-col justify-between"
         onClick={() => setOpen(true)}
       >
         <img
