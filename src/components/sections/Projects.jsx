@@ -41,15 +41,7 @@ const projectList = [
       "Mendelemento helps you explore the periodic table like never before. Choose any element to see its atom with spinning electrons in 3D. You can also use easy filters to group elements by type, like metals, gases, or noble elements. It’s a fun and visual way for young learners to understand atoms and the periodic table.",
     techIcons: [jsIcon, threeIcon, htmlIcon, cssIcon],
     link: "https://pragati9991.github.io/periodic-table/",
-  },
-  {
-    title: "Interactive Periodic Table",
-    image: mendelementoImg,
-    description:
-      "Mendelemento helps you explore the periodic table like never before. Choose any element to see its atom with spinning electrons in 3D. You can also use easy filters to group elements by type, like metals, gases, or noble elements. It’s a fun and visual way for young learners to understand atoms and the periodic table.",
-    tech: ["JavaScript", "Three.js", "HTML/CSS"],
-    link: "https://pragati9991.github.io/periodic-table/",
-  },
+  }
 ];
 
 export const Projects = () => {
@@ -61,7 +53,9 @@ export const Projects = () => {
             Featured Projects
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+{/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"> */}
+
+          <div className="flex flex-wrap justify-center gap-6">
             {projectList.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
