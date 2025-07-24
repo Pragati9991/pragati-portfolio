@@ -18,16 +18,30 @@ export const ProjectCard = ({ project }) => {
 
         <div className="mt-4 flex flex-col items-center text-center flex-grow">
           <h3 className="text-xl font-bold">{project.title}</h3>
-          <div className="flex flex-wrap justify-center gap-2 mt-2">
-            {project.tech.map((t, i) => (
-              <span
-                key={i}
-                className="bg-blue-500/10 text-blue-400 text-sm px-2 py-1 rounded"
-              >
-                {t}
-              </span>
-            ))}
+
+          <div className="flex flex-wrap justify-center gap-3 mt-3">
+            {project.techIcons ? (
+              project.techIcons.map((icon, i) => (
+                <img
+                  key={i}
+                  src={icon}
+                  alt="tech icon"
+                  className="w-10 h-10 sm:w-12 sm:h-12"
+                  title="Technology"
+                />
+              ))
+            ) : (
+              project.tech.map((t, i) => (
+                <span
+                  key={i}
+                  className="bg-blue-500/10 text-blue-400 text-sm px-2 py-1 rounded"
+                >
+                  {t}
+                </span>
+              ))
+            )}
           </div>
+
         </div>
       </div>
 
