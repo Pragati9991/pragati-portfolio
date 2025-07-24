@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }) => {
   return (
     <>
       <div
-        className="cursor-pointer p-4 rounded-xl border border-white/10 hover:shadow-lg hover:-translate-y-1 transition"
+        className="cursor-pointer p-4 rounded-xl border border-white/10 hover:shadow-lg hover:-translate-y-1 transition bg-[#0d0d0d] shadow-blue-500/20 shadow-md min-h-[450px] flex flex-col justify-between"
         onClick={() => setOpen(true)}
       >
         <img
@@ -16,13 +16,18 @@ export const ProjectCard = ({ project }) => {
           className="w-full h-auto object-contain max-h-[300px] mx-auto"
         />
 
-        <h3 className="text-xl font-bold mt-4">{project.title}</h3>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {project.tech.map((t, i) => (
-            <span key={i} className="bg-blue-500/10 text-blue-400 text-sm px-2 py-1 rounded">
-              {t}
-            </span>
-          ))}
+        <div className="mt-4 flex flex-col items-center text-center flex-grow">
+          <h3 className="text-xl font-bold">{project.title}</h3>
+          <div className="flex flex-wrap justify-center gap-2 mt-2">
+            {project.tech.map((t, i) => (
+              <span
+                key={i}
+                className="bg-blue-500/10 text-blue-400 text-sm px-2 py-1 rounded"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
