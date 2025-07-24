@@ -32,7 +32,7 @@ export const Home = () => {
             className="text-cyan-400 text-xl font-mono mt-2"
           />
   
-          <p className="text-gray-200 text-lg mb-8 max-w-lg mx-auto mt-4">
+          <p className="text-gray-300 text-lg mb-8 max-w-lg mx-auto mt-4">
             I enjoy turning ideas into simple, helpful software. Whether I’m working on a small interface or a full-stack feature, I try to build with clarity, empathy, and attention to detail. I'm always learning, always listening, and I believe the best tools feel effortless to use.
           </p>
 
@@ -51,9 +51,6 @@ export const Home = () => {
             >
               Download CV
             </a>
-
-
-
 
           </div>
         </div>

@@ -13,12 +13,11 @@ export const FinisherHeader = () => {
           y: { min: 0, max: 0.6 },
         },
         colors: {
-          background: "#0f172a",
+          background: "#000000",
           particles: ["#2a32e4", "#e5f5fb", "#a94cce"],
         },
         blending: "overlay",
         opacity: { center: 1, edge: 0 },
-        skew: -2,
         shapes: ["s"],
       });
 
