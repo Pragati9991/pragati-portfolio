@@ -49,3 +49,20 @@ html, body {
   opacity: 1;
   transform: translate(0);
 }
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background-color: #d1d5db !important; /* gray-300 */
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px !important;
+  border-radius: 9999px;
+  transition: transform 0.2s ease;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #3b82f6 !important; /* blue-500 */
+  transform: scale(1.25);
+}
+
+
