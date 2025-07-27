@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './index.css';
 
 import { Navbar } from './components/Navbar';
-import { MobileMenu } from './components/mobileMenu';
+import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
 import { About } from './components/sections/About';
 import { Projects } from './components/sections/Projects';

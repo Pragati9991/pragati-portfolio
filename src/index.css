@@ -65,5 +65,28 @@ html, body {
   transform: scale(1.25);
 }
 
+/* Custom Contact Form Layout */
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 720px;
+  padding: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    max-width: 900px;
+  }
+}
+
 
 
