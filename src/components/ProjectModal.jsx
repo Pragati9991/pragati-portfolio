@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectModal({ project, onClose }) {
   // Close on 'Escape' key
@@ -29,7 +30,7 @@ export default function ProjectModal({ project, onClose }) {
       className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center"
     >
       <div
-        className="bg-white dark:bg-zinc-900 rounded-lg max-w-2xl p-6 relative w-[90%] max-h-[90vh] overflow-y-auto"
+        className="bg-white dark:bg-zinc-900 rounded-lg max-w-2xl p-6 relative w-[90%] max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-blue-500/30"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -42,16 +43,20 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Image Slider */}
         {project.images?.length > 0 && (
-          <div className="relative w-full mb-12">
+          <div className="relative w-full mb-6">
             {/* Swiper */}
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              navigation
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
               pagination={{ clickable: true, el: ".custom-swiper-pagination" }}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               loop
-              className="w-full"       
+              className="w-full"
             >
+
               {project.images.map((img, index) => (
                 <SwiperSlide key={index}>
                   <img
@@ -63,7 +68,21 @@ export default function ProjectModal({ project, onClose }) {
               ))}
             </Swiper>
 
-            {/* Pagination Dots Container placed AFTER Swiper */}
+            <div className="custom-prev absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer z-10">
+              <ChevronLeft
+                className="w-15 h-15 text-blue-500 transition-all duration-200 hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+                strokeWidth={1}
+              />
+            </div>
+
+            <div className="custom-next absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer z-10">
+              <ChevronRight
+                className="w-15 h-15 text-blue-500 transition-all duration-200 hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+                strokeWidth={1}
+              />
+            </div>
+
+            {/* Pagination Dots */}
             <div className="custom-swiper-pagination mt-4 text-center" />
           </div>
         )}
