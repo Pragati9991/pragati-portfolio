@@ -10,7 +10,6 @@ export const ProjectCard = ({ project }) => {
         className="w-full max-w-sm mx-auto min-h-[450px] cursor-pointer p-4 rounded-xl border border-white/10 bg-[#0d0d0d] shadow-blue-500/30 shadow-md hover:shadow-lg hover:-translate-y-1 transition flex flex-col justify-between"
         onClick={() => setOpen(true)}
       >
-        {/* Thumbnail image only */}
         <img
           src={project.image}
           alt={project.title}
