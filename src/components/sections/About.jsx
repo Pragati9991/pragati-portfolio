@@ -91,23 +91,6 @@ export const About = () => {
             </div> 
           </div>
         </div>
-        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-          <h3 className="text-xl font-bold mb-4"> Education </h3>
-          <ul className="list-disc list-inside text-gray-300 space-y-2">
-              <li>
-                <strong> Certificate of Higher Education (HNC) in Multiplatform Application Development </strong> - IFP L’Hospitalet, Barcelona | September 2023 - June 2025
-              </li>
-              <li>
-                <strong> Spanish Language Course</strong> Olé Language School, Barcelona | Jan 2022 - June 2022
-              </li>
-              <li>
-                <strong> Japanese Language Course</strong> OJA Japanese Academy, Japan | April 2015 - March 2017
-              </li>
-              <li>
-                <strong> Bachelor’s Degree in Science (Mathematics, Physics, Chemistry)</strong> Hemwati Nandan University, India | 2011-2014
-              </li>
-          </ul>
-        </div>
       </div>
     </RevealOnScroll>
   </section>

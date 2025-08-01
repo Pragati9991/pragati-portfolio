@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
 import { About } from './components/sections/About';
+import { EducationGrid } from './components/sections/EducationGrid';
 import { Projects } from './components/sections/Projects';
 import { ExperienceTimeline} from './components/sections/ExperienceTimeline';
 import { Contact } from './components/sections/Contact';
@@ -19,6 +20,7 @@ function App() {
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Home />
       <About />
+      <EducationGrid />
       <Projects />
       <ExperienceTimeline />
       <Contact />
