@@ -40,18 +40,20 @@ export const Contact = () => {
       setIsSubmitting(true);
       lastSubmitAtRef.current = now;
 
-      await emailjs.send(
+      await emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        { name, email, message },
+        e.currentTarget,
         import.meta.env.VITE_PUBLIC_KEY
       );
 
       alert("Message Sent!");
       setFormData({ name: "", email: "", message: "", website: "" });
-    } catch {
+    } catch (error) {
       lastSubmitAtRef.current = 0;
-      alert("Oops! Something went wrong. Please try again.");
+      console.error("EmailJS send failed:", error);
+      const errorMessage = error?.text || "Oops! Something went wrong. Please try again.";
+      alert(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
