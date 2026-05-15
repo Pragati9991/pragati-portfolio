@@ -4,46 +4,62 @@ import ifpImg from "/src/assets/images/ifp.jpg";
 import oleImg from "/src/assets/images/ole.png";
 import ojaImg from "/src/assets/images/oja.png";
 import hnbImg from "/src/assets/images/hnb.jpg";
+import uocImg from "/src/assets/images/uoc.png";
+import migracodeImg from "/src/assets/images/migracode.png";
 
 export function EducationGrid() {
   const education = [
     {
+      icon: <FaUniversity size={28} />,
+      logo: uocImg,
+      title: "Bachelor's Degree in Computer Engineering",
+      school: "Universitat Oberta de Catalunya",
+      date: "Oct 2025 - Present",
+    },
+    {
+      icon: <FaGraduationCap size={28} />,
+      logo: migracodeImg,
+      title: "AWS Cloud Course, Cloud Computing",
+      school: "MigraCode Barcelona",
+      date: "Oct 2025 - May 2026",
+    },
+    {
       icon: <FaGraduationCap size={28} />,
       logo: ifpImg,
-      title: "Advanced Vocational Certificate in Multiplatform Application Development(DAM)",
-      school: "IFP L’Hospitalet, Barcelona, Spain",
-      date: "Sep 2023 – Jun 2025",
+      title: "Higher Vocational Training in Multiplatform Application Development",
+      school: "IFP L'Hospitalet, Barcelona, Spain",
+      date: "Sep 2023 - Jun 2025",
     },
     {
       icon: <FaLanguage size={28} />,
       logo: oleImg,
       title: "Spanish Language Course (C1)",
-      school: "Olé Language School, Barcelona, Spain",
-      date: "Jan 2022 – Jun 2022",
+      school: "Ole Language School, Barcelona, Spain",
+      date: "Jan 2022 - Jun 2022",
     },
     {
       icon: <FaLanguage size={28} />,
       logo: ojaImg,
       title: "Japanese Language Course (JLPT N2)",
       school: "OJA Japanese Academy, Osaka, Japan",
-      date: "Apr 2015 – Mar 2017",
+      date: "Apr 2015 - Mar 2017",
     },
     {
       icon: <FaUniversity size={28} />,
       logo: hnbImg,
-      title: "Bachelor’s in Science (Physics, Chemistry, Mathematics)",
+      title: "Bachelor's in Science (Physics, Chemistry, Mathematics)",
       school: "Hemwati Nandan Bahuguna University, India",
-      date: "2011 – 2014",
+      date: "Jul 2011 - May 2014",
     },
   ];
 
   return (
     <section id="education" className="py-20 bg-black text-white">
       <RevealOnScroll>
-      <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-        Education
-      </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          Education
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {education.map((item, index) => (
             <div
               key={index}
@@ -55,15 +71,15 @@ export function EducationGrid() {
                     src={item.logo}
                     alt={item.school}
                     className={`w-full h-full ${
-                      item.school.includes("Olé")
+                      item.school.includes("Ole")
                         ? "object-contain scale-[1.2]"
                         : item.school.includes("IFP")
-                        ? "object-contain scale-[1.3]"
-                        : item.school.includes("OJA")
-                        ? "object-contain scale-[1.2]"
-                        : item.school.includes("Hemwati")
-                        ? "object-contain scale-[1.4]"
-                        : "object-contain scale-100"
+                          ? "object-contain scale-[1.3]"
+                          : item.school.includes("OJA")
+                            ? "object-contain scale-[1.2]"
+                            : item.school.includes("Hemwati")
+                              ? "object-contain scale-[1.4]"
+                              : "object-contain scale-100"
                     }`}
                   />
                 </div>
