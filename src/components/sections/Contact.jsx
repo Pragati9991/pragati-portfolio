@@ -6,29 +6,61 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
+    website: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const lastSubmitAtRef = useRef(0);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID, 
-        import.meta.env.VITE_TEMPLATE_ID, 
-        e.target, 
+    const now = Date.now();
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+
+    if (formData.website) {
+      alert("Message Sent!");
+      setFormData({ name: "", email: "", message: "", website: "" });
+      return;
+    }
+
+    if (!name || !email || !message) {
+      alert("Please fill in every field before sending.");
+      return;
+    }
+
+    if (now - lastSubmitAtRef.current < 15000) {
+      alert("Please wait a moment before sending another message.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      lastSubmitAtRef.current = now;
+
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        { name, email, message },
         import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then((result) => {
-        alert("Message Sent!");
-        setFormData({name: "", email: "", message: ""});
-      })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      );
+
+      alert("Message Sent!");
+      setFormData({ name: "", email: "", message: "", website: "" });
+    } catch {
+      lastSubmitAtRef.current = 0;
+      alert("Oops! Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const contactRef = useRef(null);
   const [showPlane, setShowPlane] = useState(false);
 
   useEffect(() => {
+    const contactElement = contactRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -40,13 +72,13 @@ export const Contact = () => {
       }
     );
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
+    if (contactElement) {
+      observer.observe(contactElement);
     }
 
     return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
+      if (contactElement) {
+        observer.unobserve(contactElement);
       }
     };
   }, []);
@@ -78,11 +110,25 @@ export const Contact = () => {
           </p>
 
           <form className="space-y-6 max-w-2xl mx-auto" onSubmit={handleSubmit}>
+            <div className="absolute left-[-9999px]" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website}
+                onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+              />
+            </div>
+
             <input
               type="text"
               id="name"
               name="name"
               required
+              maxLength={120}
               value={formData.name}
               className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 transition"
               placeholder="Name..."
@@ -94,6 +140,7 @@ export const Contact = () => {
               id="email"
               name="email"
               required
+              maxLength={254}
               value={formData.email}
               className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 transition"
               placeholder="example@gmail.com"
@@ -105,6 +152,7 @@ export const Contact = () => {
               name="message"
               required
               value={formData.message}
+              maxLength={2000}
               rows={5}
               className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 transition"
               placeholder="Your Message..."
@@ -113,9 +161,10 @@ export const Contact = () => {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
