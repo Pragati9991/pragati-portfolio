@@ -28,7 +28,7 @@ export const Home = () => {
 
           <TypingText
             texts={["Full Stack Developer", "AI Solutions Developer"]}
-            speed={100}
+            speed={150}
             className="text-cyan-400 text-xl font-mono mt-2"
           />
   

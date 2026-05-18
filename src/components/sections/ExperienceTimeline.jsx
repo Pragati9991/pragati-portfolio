@@ -3,24 +3,39 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { FaAngular, FaChalkboardTeacher, FaProjectDiagram, FaBookOpen, FaHourglassStart  } from "react-icons/fa";
+import {
+  FaBookOpen,
+  FaChalkboardTeacher,
+  FaHourglassStart,
+  FaProjectDiagram,
+  FaRobot,
+  FaAngular,
+} from "react-icons/fa";
 
 const experiences = [
   {
+    years: "Oct 2025 - Present",
+    title: "AI Solutions Developer",
+    company: "Intuitiva Labs",
+    mainTech: ["Automation", "AI Solutions"],
+    technologies: ["Selenium", "Firecrawl", "n8n"],
+    icon: <FaRobot />,
+  },
+  {
     years: "Oct 2024 - Mar 2025",
-    title: "Application Developer Trainee",
+    title: "Application Developer Intern",
     company: "SunscreenTech.eu, Spain",
     mainTech: ["Angular", "Flutter"],
     technologies: ["REST API", "Firebase"],
-    icon: <FaAngular />
+    icon: <FaAngular />,
   },
   {
-    years: "Sep 2022 – Jun 2023",
+    years: "Sep 2022 - Jun 2023",
     title: "English Teacher",
-    company: "Progress Escola D’Idiomes, Spain",
+    company: "Progress Escola D'Idiomes, Spain",
     mainTech: ["Cambridge B2/C1"],
     technologies: ["Lesson Planning"],
-    icon: <FaChalkboardTeacher />
+    icon: <FaChalkboardTeacher />,
   },
   {
     years: "Jan 2021 - Apr 2021",
@@ -28,7 +43,7 @@ const experiences = [
     company: "New Delhi, India",
     mainTech: ["Coordination"],
     technologies: ["Client Communication"],
-    icon: <FaProjectDiagram />
+    icon: <FaProjectDiagram />,
   },
   {
     years: "Apr 2017 - Jan 2020",
@@ -36,7 +51,7 @@ const experiences = [
     company: "Osaka, Japan",
     mainTech: ["ADHD Support"],
     technologies: ["Custom Learning Plans"],
-    icon: <FaBookOpen />
+    icon: <FaBookOpen />,
   },
 ];
 
@@ -62,16 +77,14 @@ export function ExperienceTimeline() {
                 {item.mainTech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-yellow-600/10 text-pink-400 px-2 py-1 rounded-full text-xs"
+                    className="bg-green-500/10 text-green-300 px-2 py-1 rounded-full text-xs"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               <h3 className="text-lg">{item.title}</h3>
-              <h4 className="text-sm mb-2 text-gray-400">
-                {item.company}
-              </h4>
+              <h4 className="text-sm mb-2 text-gray-400">{item.company}</h4>
               <div className="flex flex-wrap gap-2 mt-2">
                 {item.technologies.map((tech, i) => (
                   <span
@@ -85,7 +98,6 @@ export function ExperienceTimeline() {
             </VerticalTimelineElement>
           ))}
 
-          {/* End element */}
           <VerticalTimelineElement
             iconStyle={{ background: "#1F2937", color: "#fff" }}
             icon={<FaHourglassStart />}
