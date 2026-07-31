@@ -10,6 +10,7 @@ import { Projects } from './components/sections/Projects';
 import { ExperienceTimeline} from './components/sections/ExperienceTimeline';
 import { Contact } from './components/sections/Contact';
 import Footer from './components/Footer';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -25,6 +26,7 @@ function App() {
       <EducationGrid />    
       <Contact />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
