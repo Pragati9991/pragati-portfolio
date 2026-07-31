@@ -102,7 +102,7 @@ export const About = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4 space-y-8">
+        <div className="max-w-6xl mx-auto px-4 space-y-8">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             About Me
           </h2>
@@ -137,7 +137,7 @@ export const About = () => {
                   className="rounded-lg border border-white/10 bg-black/30 p-5"
                 >
                   <h3 className="text-xl font-bold mb-5">{title}</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {items.map(({ name, icon }) => (
                       <div
                         key={name}
@@ -147,7 +147,7 @@ export const About = () => {
                           className: "shrink-0 text-blue-400 group-hover:text-cyan-300",
                           size: 20,
                         })}
-                        <span className="leading-tight">{name}</span>
+                        <span className="min-w-0 leading-tight break-words">{name}</span>
                       </div>
                     ))}
                   </div>
