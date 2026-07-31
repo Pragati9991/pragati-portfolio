@@ -3,6 +3,8 @@ import { ProjectCard } from "../ProjectCard";
 import homeClinicaImg from "/src/assets/images/homeClinica.png";
 import mendelementoImg from "/src/assets/images/mendelemento.png";
 import safeReactImage from "/src/assets/images/safeReact.png";
+import invoiceAutomationPreview from "/src/assets/images/invoice-automation-preview.svg";
+import priceTrackerPreview from "/src/assets/images/price-tracker-preview.svg";
 
 // Image sets
 import form from "/src/assets/images/form.png";
@@ -38,7 +40,7 @@ import cssIcon from "/src/assets/icons/css3.svg";
 import jsIcon from "/src/assets/icons/javascript.svg";
 import threeIcon from "/src/assets/icons/threejs.png";
 import htmlIcon from "/src/assets/icons/html.svg";
-import flutterIcon from "/src/assets/icons/Flutter.svg";
+import flutterIcon from "/src/assets/icons/flutter.svg";
 import dartIcon from "/src/assets/icons/dart.svg";
 
 const projectList = [
@@ -77,6 +79,22 @@ const projectList = [
       "SafeReact is a prototype of a drug interaction app built with Flutter and Dart. It helps users identify potential food and medicine interactions that could lead to harmful side effects. Designed to promote awareness and safer daily choices.",
     techIcons: [flutterIcon, dartIcon],
     link: "https://youtube.com/shorts/HfcDl-lyWI4?feature=share",
+  },
+  {
+    title: "Invoice Automation Tool",
+    image: invoiceAutomationPreview,
+    images: [invoiceAutomationPreview],
+    description:
+      "An internal Python automation tool that cleans invoice CSV files, validates totals, groups invoice rows, prevents duplicate imports, and sends transactions to Quaderno through the API. It includes dry-run mode, structured CSV/JSON logs, reconciliation reports, and a private Streamlit dashboard for monthly approval without exposing customer data.",
+    tech: ["Python", "Pandas", "Requests", "Quaderno API", "Streamlit", "Plotly", "Docker"],
+  },
+  {
+    title: "Price Monitoring & Reporting Automation",
+    image: priceTrackerPreview,
+    images: [priceTrackerPreview],
+    description:
+      "A Python price tracking system that monitors products across multiple ecommerce websites, stores historical results, exports CSV data for Power BI, and generates run summaries for n8n automation. It separates clean matches from products needing manual review, making weekly reporting more reliable.",
+    tech: ["Python", "Selenium", "Pandas", "SQLite", "Streamlit", "Plotly", "Power BI", "n8n"],
   }
 ];
 

@@ -117,6 +117,7 @@ export default function ProjectModal({ project, onClose }) {
         )}
 
         {/* Project Link */}
+        {project.link && (
         <div className="flex justify-center items-center mt-6">
           <a
             href={project.link}
@@ -127,6 +128,7 @@ export default function ProjectModal({ project, onClose }) {
             View Project →
           </a>
         </div>
+        )}
       </div>
     </div>
   );
