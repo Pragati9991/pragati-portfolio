@@ -1,5 +1,17 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { ProjectCard } from "../ProjectCard";
+import {
+  SiDocker,
+  SiN8N,
+  SiPandas,
+  SiPlotly,
+  SiPython,
+  SiQuarto,
+  SiSelenium,
+  SiSqlite,
+  SiStreamlit,
+} from "react-icons/si";
+import { ChartNoAxesCombined } from "lucide-react";
 import homeClinicaImg from "/src/assets/images/homeClinica.png";
 import mendelementoImg from "/src/assets/images/mendelemento.png";
 import safeReactImage from "/src/assets/images/safeReact.png";
@@ -86,6 +98,14 @@ const projectList = [
     images: [invoiceAutomationPreview],
     description:
       "An internal Python automation tool that cleans invoice CSV files, validates totals, groups invoice rows, prevents duplicate imports, and sends transactions to Quaderno through the API. It includes dry-run mode, structured CSV/JSON logs, reconciliation reports, and a private Streamlit dashboard for monthly approval without exposing customer data.",
+    techIcons: [
+      { name: "Python", icon: SiPython },
+      { name: "Pandas", icon: SiPandas },
+      { name: "Quaderno API", icon: SiQuarto },
+      { name: "Streamlit", icon: SiStreamlit },
+      { name: "Plotly", icon: SiPlotly },
+      { name: "Docker", icon: SiDocker },
+    ],
     tech: ["Python", "Pandas", "Requests", "Quaderno API", "Streamlit", "Plotly", "Docker"],
   },
   {
@@ -94,6 +114,14 @@ const projectList = [
     images: [priceTrackerPreview],
     description:
       "A Python price tracking system that monitors products across multiple ecommerce websites, stores historical results, exports CSV data for Power BI, and generates run summaries for n8n automation. It separates clean matches from products needing manual review, making weekly reporting more reliable.",
+    techIcons: [
+      { name: "Python", icon: SiPython },
+      { name: "Selenium", icon: SiSelenium },
+      { name: "Pandas", icon: SiPandas },
+      { name: "SQLite", icon: SiSqlite },
+      { name: "Power BI", icon: ChartNoAxesCombined },
+      { name: "n8n", icon: SiN8N },
+    ],
     tech: ["Python", "Selenium", "Pandas", "SQLite", "Streamlit", "Plotly", "Power BI", "n8n"],
   }
 ];

@@ -4,6 +4,7 @@ import {
   SiAngular,
   SiBootstrap,
   SiCss3,
+  SiDocker,
   SiExpress,
   SiFigma,
   SiFlutter,
@@ -13,14 +14,21 @@ import {
   SiJavascript,
   SiJsonwebtokens,
   SiMysql,
+  SiN8N,
   SiNodedotjs,
+  SiPandas,
+  SiPlotly,
+  SiPython,
   SiReact,
+  SiSelenium,
+  SiSqlite,
+  SiStreamlit,
   SiTailwindcss,
   SiThreedotjs,
   SiTypescript,
   SiVite,
 } from "react-icons/si";
-import { BrainCircuit, Database, HeartHandshake, Sparkles } from "lucide-react";
+import { BrainCircuit, ChartNoAxesCombined, Database, HeartHandshake, Sparkles } from "lucide-react";
 
 export const About = () => {
   const strengths = [
@@ -72,6 +80,20 @@ export const About = () => {
         { name: "Go APIs", icon: SiGo },
       ],
     },
+    {
+      title: "Automation & Data",
+      items: [
+        { name: "Python", icon: SiPython },
+        { name: "Pandas", icon: SiPandas },
+        { name: "Selenium", icon: SiSelenium },
+        { name: "Streamlit", icon: SiStreamlit },
+        { name: "Plotly", icon: SiPlotly },
+        { name: "SQLite", icon: SiSqlite },
+        { name: "Power BI", icon: ChartNoAxesCombined },
+        { name: "Docker", icon: SiDocker },
+        { name: "n8n", icon: SiN8N },
+      ],
+    },
   ];
 
   return (
@@ -108,7 +130,7 @@ export const About = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {skillGroups.map(({ title, items }) => (
                 <div
                   key={title}

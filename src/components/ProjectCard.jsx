@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createElement } from "react";
 import Modal from "./ProjectModal";
 
 export const ProjectCard = ({ project }) => {
@@ -21,15 +22,25 @@ export const ProjectCard = ({ project }) => {
 
           <div className="flex flex-wrap justify-center gap-3 mt-3">
             {project.techIcons ? (
-              project.techIcons.map((icon, i) => (
-                <img
-                  key={i}
-                  src={icon}
-                  alt="tech icon"
-                  className="w-10 h-10 sm:w-12 sm:h-12"
-                  title="Technology"
-                />
-              ))
+              project.techIcons.map((tech, i) =>
+                typeof tech === "string" ? (
+                  <img
+                    key={i}
+                    src={tech}
+                    alt="tech icon"
+                    className="w-10 h-10 sm:w-12 sm:h-12"
+                    title="Technology"
+                  />
+                ) : (
+                  <div
+                    key={tech.name}
+                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-blue-500/10 text-blue-400"
+                    title={tech.name}
+                  >
+                    {createElement(tech.icon, { size: 28 })}
+                  </div>
+                )
+              )
             ) : (
               project.tech.map((t, i) => (
                 <span

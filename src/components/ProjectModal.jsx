@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createElement } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -110,9 +111,19 @@ export default function ProjectModal({ project, onClose }) {
         {/* Icons */}
         {project.techIcons?.length > 0 && (
           <div className="flex flex-wrap justify-center gap-3 mt-4">
-            {project.techIcons.map((icon, i) => (
-              <img key={i} src={icon} alt="tech icon" className="w-8 h-8" />
-            ))}
+            {project.techIcons.map((tech, i) =>
+              typeof tech === "string" ? (
+                <img key={i} src={tech} alt="tech icon" className="w-8 h-8" />
+              ) : (
+                <div
+                  key={tech.name}
+                  className="w-8 h-8 flex items-center justify-center rounded bg-blue-500/10 text-blue-400"
+                  title={tech.name}
+                >
+                  {createElement(tech.icon, { size: 20 })}
+                </div>
+              )
+            )}
           </div>
         )}
 
